@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dashboard_footer_height"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:paddingStart="@dimen/dashboard_message_horizontal_padding"
+    android:paddingEnd="@dimen/dashboard_message_horizontal_padding">
+
+    <ImageView
+        android:id="@+id/dashboard_footer_company_logo"
+        android:layout_width="@dimen/dashboard_footer_company_logo_width"
+        android:layout_height="@dimen/dashboard_footer_company_logo_height"
+        android:maxHeight="@dimen/dashboard_footer_company_logo_height"
+        android:maxWidth="@dimen/dashboard_footer_company_logo_width"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dashboard_footer_company_logo_margin_Top_Bottom"
+        android:layout_marginBottom="@dimen/dashboard_footer_company_logo_margin_Top_Bottom"/>
+
+</RelativeLayout>

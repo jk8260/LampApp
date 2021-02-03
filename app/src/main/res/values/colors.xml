@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#101112</color>
+
+    <color name="primary">#D0112B</color>
+    <color name="primaryDark">#B42835</color>
+
+    <color name="accent">#33383B</color>
+    <color name="accentDark">#2A3033</color>
+    <color name="accentLight">#474B4F</color>
+
+    <color name="grey5">#797A7D</color>
+    <color name="grey4">#9FA1A4</color>
+    <color name="grey3">#BBBBBB</color>
+    <color name="grey2">#DADBDC</color>
+    <color name="grey1">#F1F1F1</color>
+    <color name="greyTablet">#F8F8F8</color>
+
+    <color name="note">#33383B</color>
+    <color name="progress_bar_background">#88000000</color>
+
+    <color name="sync_date_outdated">#fae6e3</color>
+
+</resources>

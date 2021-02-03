@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="50"
+        android:title="@string/search_menu_title"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/action_search"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_scan_rename_scan_set"
+        android:orderInCategory="100"
+        android:title="@string/rename_scan_set"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_scan_reorder_fields"
+        android:orderInCategory="200"
+        android:title="@string/reorder_fields"
+        app:showAsAction="never"/>
+
+</menu>

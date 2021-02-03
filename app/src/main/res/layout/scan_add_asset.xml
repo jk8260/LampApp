@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight">
+
+    <ImageView
+        android:id="@+id/field_list"
+        android:layout_width="@dimen/default_title_margin"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/list_list"
+        android:tint="@color/grey5"
+        android:paddingEnd="@dimen/default_ui_padding"
+        android:visibility="invisible"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/field_label"
+        style="@style/Subheading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/field_list"
+        android:textColor="@color/black"
+        android:layout_centerVertical="true"
+        android:paddingBottom="@dimen/default_tiny_padding"/>
+
+    <EditText
+        android:id="@+id/field_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/field_label"
+        android:layout_toEndOf="@+id/field_label"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey3"
+        android:textSize="@dimen/subheading"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/default_ui_padding"
+        android:layout_marginEnd="@dimen/default_horizontal_margin"
+        android:paddingBottom="@dimen/default_tiny_padding"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:background="@color/transparent"/>
+
+</RelativeLayout>

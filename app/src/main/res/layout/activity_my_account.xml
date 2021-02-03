@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/default_toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_account_row_height_title"
+            android:background="@color/grey1"
+            android:id="@+id/my_account_customer_title_layout">
+
+            <Space
+                android:layout_width="@dimen/my_account_content_inset"
+                android:layout_height="@dimen/my_account_row_height_title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/customer"
+                android:textSize="@dimen/body"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:textColor="@color/grey3"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_account_row_height_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:id="@+id/my_account_customer_content_layout">
+            <ImageView
+                android:src="@drawable/list_account"
+                android:layout_width="@dimen/my_account_content_inset"
+                android:layout_height="wrap_content"
+                android:tint="@color/grey3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/my_account_row_height_content"
+                android:textSize="@dimen/subheading"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:id="@+id/my_account_customer_company" />
+            <Button
+                android:id="@+id/changeCustomerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@drawable/button_text_selector_grey3"
+                android:textSize="@dimen/body"
+                android:text="@string/change"
+                android:background="@color/transparent"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|end"
+                android:paddingEnd="@dimen/my_account_margin_end"
+                android:onClick="changeCustomer" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_account_row_height_title"
+            android:background="@color/grey1">
+            <Space
+                android:layout_width="@dimen/my_account_content_inset"
+                android:layout_height="@dimen/my_account_row_height_title"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/account_info"
+                android:textSize="@dimen/body"
+                android:fontFamily="@string/font_fontFamily_medium"
+                android:textColor="@color/grey3"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <ImageView
+                android:src="@drawable/list_customer"
+                android:layout_width="@dimen/my_account_content_inset"
+                android:layout_height="wrap_content"
+                android:tint="@color/grey3"
+                android:layout_gravity="top"
+                android:layout_marginTop="@dimen/my_account_margin_top" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/my_account_margin_top">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/caption"
+                    android:fontFamily="@string/font_fontFamily_medium"
+                    android:text="@string/name"
+                    android:textColor="@color/grey3"
+                    android:gravity="center_vertical"
+                    android:id="@+id/my_account_info_name_title"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading"
+                    android:fontFamily="@string/font_fontFamily_medium"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:id="@+id/my_account_info_name" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/caption"
+                    android:fontFamily="@string/font_fontFamily_medium"
+                    android:text="@string/username"
+                    android:textColor="@color/grey3"
+                    android:gravity="center_vertical"
+                    android:id="@+id/my_account_info_username_title" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading"
+                    android:fontFamily="@string/font_fontFamily_medium"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:id="@+id/my_account_info_username" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/caption"
+                    android:fontFamily="@string/font_fontFamily_medium"
+                    android:text="@string/email"
+                    android:textColor="@color/grey3"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/subheading"
+                    android:fontFamily="@string/font_fontFamily_medium"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:id="@+id/my_account_info_email" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/my_account_row_height_footer"
+            android:background="@color/grey1"
+            android:layout_marginTop="@dimen/my_account_margin_top">
+            <Space
+                android:layout_width="@dimen/my_account_content_inset"
+                android:layout_height="@dimen/my_account_row_height_footer"/>
+        </LinearLayout>
+    </LinearLayout>
+    <fragment
+        android:id="@+id/footer_fragment"
+        android:name="com.elasalle.lamp.ui.FooterFragment"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/footer_fragment"/>
+
+</RelativeLayout>

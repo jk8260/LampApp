@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/dashboard_menu_main">
+        <item
+            android:id="@+id/action_my_account"
+            android:orderInCategory="0"
+            android:title="@string/dashboard_menu_my_account"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/action_change_customer"
+            android:orderInCategory="50"
+            android:title="@string/dashboard_menu_change_customer"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/action_about"
+            android:orderInCategory="100"
+            android:title="@string/dashboard_menu_about"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/action_intro"
+            android:orderInCategory="200"
+            android:title="@string/dashboard_menu_intro"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/action_third_party"
+            android:orderInCategory="300"
+            android:title="@string/dashboard_menu_third_party"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/action_logout"
+            android:orderInCategory="500"
+            android:title="@string/dashboard_menu_logout"
+            app:showAsAction="never"/>
+    </group>
+
+    <group
+        android:id="@+id/dashboard_menu_footer">
+        <item
+            android:orderInCategory="600"
+            android:id="@+id/action_version"
+            android:title="@string/dashboard_menu_version"
+            android:enabled="false"
+            app:showAsAction="never"/>
+    </group>
+
+
+</menu>

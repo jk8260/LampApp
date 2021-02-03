@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_background"
+    android:padding="@dimen/default_small_margin"
+    android:layout_marginEnd="@dimen/search_result_horizontal_margin"
+    android:layout_marginStart="@dimen/search_result_horizontal_margin"
+    android:layout_marginTop="@dimen/search_result_vertical_margin"
+    android:layout_marginBottom="@dimen/search_result_vertical_margin">
+
+</LinearLayout>

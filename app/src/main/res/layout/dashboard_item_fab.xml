@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.design.widget.FloatingActionButton xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/dashboard_item_fab"
+        android:layout_width="@dimen/dashboard_fab_diameter"
+        android:layout_height="@dimen/dashboard_fab_diameter"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/default_horizontal_margin"
+        android:scaleType="center"
+        android:tint="@color/primary"
+        app:backgroundTint="@drawable/dashboard_fab_tint" />
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="@dimen/notification_badge_width"
+        android:layout_height="@dimen/notification_badge_height"
+        android:layout_alignEnd="@+id/dashboard_item_fab"
+        android:layout_alignTop="@+id/dashboard_item_fab"
+        android:background="@drawable/notification_badge"
+        android:gravity="center"
+        android:padding="@dimen/default_ui_padding_small"
+        android:textColor="@color/white"
+        android:textSize="@dimen/notification_badge_number"
+        android:visibility="invisible"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"/>
+
+</merge>

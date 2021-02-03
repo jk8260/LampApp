@@ -1,0 +1,751 @@
+# Source: https://github.com/zxing/zxing/commit/d5058a71c614df2715230170b90b0af553ae8863
+# The changes below were made to the source of zxing when converted to a library module.
+* Switch statements that used a resource constant were converted to if/else
+* Manifest attributes not required by LAMP app were removed
+
+--- /zxing/android/AndroidManifest.xml	2016-04-19 14:19:14.000000000 -0500
++++ /scanner/src/main/AndroidManifest.xml	2016-04-19 16:36:19.000000000 -0500
+@@ -1,5 +1,4 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!--
++<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright (C) 2008 ZXing authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+@@ -16,141 +15,173 @@
+  -->
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+           package="com.google.zxing.client.android"
+-          android:versionName="4.7.5"
++    android:installLocation="auto"
+           android:versionCode="105"    
+-          android:installLocation="auto">
++    android:versionName="4.7.5">
+
+-  <uses-permission android:name="android.permission.CAMERA"/>
+-  <uses-permission android:name="android.permission.INTERNET"/>
+-  <uses-permission android:name="android.permission.VIBRATE"/>
+-  <uses-permission android:name="android.permission.FLASHLIGHT"/>
+-  <uses-permission android:name="android.permission.READ_CONTACTS"/>
+-  <!-- unavailable in API 23 -->
+-  <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+-  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+-  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+-
+-  <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22"/>
++    <uses-permission android:name="android.permission.CAMERA" />
++    <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.FLASHLIGHT" />>
++
++    <uses-sdk
++        android:minSdkVersion="15"
++        android:targetSdkVersion="22" />
+
+   <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+-  <uses-feature android:name="android.hardware.camera" android:required="false"/>
+-  <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
++    <uses-feature
++        android:name="android.hardware.camera"
++        android:required="false" />
++    <uses-feature
++        android:name="android.hardware.camera.front"
++        android:required="false" />
+   <!-- TODO replace above two with next line after Android 4.2 -->
+   <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+-  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+-  <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+-  <uses-feature android:name="android.hardware.screen.landscape"/>
+-  <uses-feature android:name="android.hardware.wifi" android:required="false"/>
++    <uses-feature
++        android:name="android.hardware.camera.autofocus"
++        android:required="false" />
++    <uses-feature
++        android:name="android.hardware.camera.flash"
++        android:required="false" />
++    <uses-feature android:name="android.hardware.screen.landscape" />
++    <uses-feature
++        android:name="android.hardware.wifi"
++        android:required="false" />
+   <!-- This excludes Google TV, which is unfortunately included by virtue of not requiring a camera -->
+-  <uses-feature android:name="android.hardware.touchscreen"/>
++    <uses-feature android:name="android.hardware.touchscreen" />
+   <!-- TODO make this not required again after android.hardware.camera.any is available -->
+
+-  <supports-screens android:xlargeScreens="true"
++    <supports-screens
++        android:anyDensity="true"
+                     android:largeScreens="true"
+                     android:normalScreens="true"
+                     android:smallScreens="true"
+-                    android:anyDensity="true"/>
++        android:xlargeScreens="true" />
+
+-  <application android:icon="@drawable/launcher_icon"
+-               android:logo="@drawable/launcher_icon"
++    <application
++        android:allowBackup="true"
++        android:icon="@drawable/launcher_icon"
+                android:label="@string/app_name"
+-               android:allowBackup="true">
+-    <activity android:name=".CaptureActivity"
+-              android:screenOrientation="sensorLandscape"
++        android:logo="@drawable/launcher_icon">
++        <activity
++            android:name=".CaptureActivity"
+               android:clearTaskOnLaunch="true"
++            android:screenOrientation="sensorLandscape"
+               android:stateNotNeeded="true"
+               android:theme="@style/CaptureTheme"
+               android:windowSoftInputMode="stateAlwaysHidden">
+       <intent-filter>
+-        <action android:name="android.intent.action.MAIN"/>
+-        <category android:name="android.intent.category.LAUNCHER"/>
+-      </intent-filter>
+-      <intent-filter>
+-        <action android:name="com.google.zxing.client.android.SCAN"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
++                <action android:name="com.google.zxing.client.android.SCAN" />
++                <category android:name="android.intent.category.DEFAULT" />
+       </intent-filter>
+       <!-- Allow web apps to launch Barcode Scanner by linking to http://zxing.appspot.com/scan. -->
+       <intent-filter>
+-        <action android:name="android.intent.action.VIEW"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
+-        <category android:name="android.intent.category.BROWSABLE"/>
+-        <data android:scheme="http" android:host="zxing.appspot.com" android:path="/scan"/>
++                <action android:name="android.intent.action.VIEW" />
++
++                <category android:name="android.intent.category.DEFAULT" />
++                <category android:name="android.intent.category.BROWSABLE" />
++
++                <data
++                    android:host="zxing.appspot.com"
++                    android:path="/scan"
++                    android:scheme="http" />
+       </intent-filter>
+       <!-- We also support a Google Product Search URL. -->
+       <intent-filter>
+-        <action android:name="android.intent.action.VIEW"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
+-        <category android:name="android.intent.category.BROWSABLE"/>
+-        <data android:scheme="http" android:host="www.google.com" android:path="/m/products/scan"/>
++                <action android:name="android.intent.action.VIEW" />
++
++                <category android:name="android.intent.category.DEFAULT" />
++                <category android:name="android.intent.category.BROWSABLE" />
++
++                <data
++                    android:host="www.google.com"
++                    android:path="/m/products/scan"
++                    android:scheme="http" />
+       </intent-filter>
+       <!-- And the UK version. -->
+       <intent-filter>
+-        <action android:name="android.intent.action.VIEW"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
+-        <category android:name="android.intent.category.BROWSABLE"/>
+-        <data android:scheme="http" android:host="www.google.co.uk" android:path="/m/products/scan"/>
++                <action android:name="android.intent.action.VIEW" />
++
++                <category android:name="android.intent.category.DEFAULT" />
++                <category android:name="android.intent.category.BROWSABLE" />
++
++                <data
++                    android:host="www.google.co.uk"
++                    android:path="/m/products/scan"
++                    android:scheme="http" />
+       </intent-filter>
+       <!-- Support zxing://scan/?... like iPhone app -->
+       <intent-filter>
+-        <action android:name="android.intent.action.VIEW"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
+-        <category android:name="android.intent.category.BROWSABLE"/>
+-        <data android:scheme="zxing" android:host="scan" android:path="/"/>
++                <action android:name="android.intent.action.VIEW" />
++
++                <category android:name="android.intent.category.DEFAULT" />
++                <category android:name="android.intent.category.BROWSABLE" />
++
++                <data
++                    android:host="scan"
++                    android:path="/"
++                    android:scheme="zxing" />
+       </intent-filter>
+     </activity>
+-    <activity android:name=".PreferencesActivity"
++        <activity
++            android:name=".PreferencesActivity"
+               android:label="@string/preferences_name"
+-              android:stateNotNeeded="true"/>
+-    <activity android:name=".encode.EncodeActivity"
++            android:stateNotNeeded="true" />
++        <activity
++            android:name=".encode.EncodeActivity"
+               android:stateNotNeeded="true">
+       <intent-filter>
+-        <action android:name="com.google.zxing.client.android.ENCODE"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
++                <action android:name="com.google.zxing.client.android.ENCODE" />
++                <category android:name="android.intent.category.DEFAULT" />
+       </intent-filter>
+       <!-- This allows us to handle the Share button in Contacts. -->
+       <intent-filter>
+-        <action android:name="android.intent.action.SEND"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
+-        <data android:mimeType="text/x-vcard"/>
++                <action android:name="android.intent.action.SEND" />
++                <category android:name="android.intent.category.DEFAULT" />
++                <data android:mimeType="text/x-vcard" />
+       </intent-filter>
+       <!-- This allows us to handle sharing any plain text . -->
+       <intent-filter>
+-        <action android:name="android.intent.action.SEND"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
+-        <data android:mimeType="text/plain"/>
++                <action android:name="android.intent.action.SEND" />
++                <category android:name="android.intent.category.DEFAULT" />
++                <data android:mimeType="text/plain" />
+       </intent-filter>
+     </activity>
+-    <activity android:name=".book.SearchBookContentsActivity"
++        <activity
++            android:name=".book.SearchBookContentsActivity"
+               android:label="@string/sbc_name"
+-              android:stateNotNeeded="true"
+-              android:screenOrientation="sensorLandscape">
++            android:screenOrientation="sensorLandscape"
++            android:stateNotNeeded="true">
+       <intent-filter>
+-        <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
++                <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS" />
++                <category android:name="android.intent.category.DEFAULT" />
+       </intent-filter>
+     </activity>
+-    <activity android:name=".share.ShareActivity"
+-              android:stateNotNeeded="true"
+-              android:screenOrientation="user">
++        <activity
++            android:name=".share.ShareActivity"
++            android:screenOrientation="user"
++            android:stateNotNeeded="true">
+       <intent-filter>
+-        <action android:name="com.google.zxing.client.android.SHARE"/>
+-        <category android:name="android.intent.category.DEFAULT"/>
++                <action android:name="com.google.zxing.client.android.SHARE" />
++                <category android:name="android.intent.category.DEFAULT" />
+       </intent-filter>
+     </activity>
+-    <activity android:name=".history.HistoryActivity"
++        <activity
++            android:name=".history.HistoryActivity"
+               android:label="@string/history_title"
+-              android:stateNotNeeded="true"/>
+-    <activity android:name=".share.BookmarkPickerActivity"
++            android:stateNotNeeded="true" />
++        <activity
++            android:name=".share.BookmarkPickerActivity"
+               android:label="@string/bookmark_picker_name"
+-              android:stateNotNeeded="true"/>
+-    <activity android:name=".share.AppPickerActivity"
++            android:stateNotNeeded="true" />
++        <activity
++            android:name=".share.AppPickerActivity"
+               android:label="@string/app_picker_name"
+-              android:stateNotNeeded="true"/>
+-    <activity android:name=".HelpActivity"
++            android:stateNotNeeded="true" />
++        <activity
++            android:name=".HelpActivity"
+               android:label="@string/menu_help"
+               android:screenOrientation="user"
+-              android:stateNotNeeded="true"/>
++            android:stateNotNeeded="true" />
+   </application>
+
+ </manifest>
+
+ diff -rub /zxing/android/src/com/google/zxing/client/android/CaptureActivity.java /scanner/src/main/java/com/google/zxing/client/android/CaptureActivity.java
+ --- /zxing/android/src/com/google/zxing/client/android/CaptureActivity.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/CaptureActivity.java	2016-04-20 14:33:16.000000000 -0500
+ @@ -32,6 +32,7 @@
+  import com.google.zxing.client.android.result.supplement.SupplementalInfoRetriever;
+  import com.google.zxing.client.android.share.ShareActivity;
+
+ +import android.annotation.SuppressLint;
+  import android.app.Activity;
+  import android.app.AlertDialog;
+  import android.content.Intent;
+ @@ -43,6 +44,7 @@
+  import android.graphics.Canvas;
+  import android.graphics.Paint;
+  import android.net.Uri;
+ +import android.os.Build;
+  import android.os.Bundle;
+  import android.os.Handler;
+  import android.os.Message;
+ @@ -79,42 +81,42 @@
+   * @author dswitkin@google.com (Daniel Switkin)
+   * @author Sean Owen
+   */
+ -public final class CaptureActivity extends Activity implements SurfaceHolder.Callback {
+ +public class CaptureActivity extends Activity implements SurfaceHolder.Callback {
+
+ -  private static final String TAG = CaptureActivity.class.getSimpleName();
+ +  protected static final String TAG = CaptureActivity.class.getSimpleName();
+
+ -  private static final long DEFAULT_INTENT_RESULT_DURATION_MS = 1500L;
+ -  private static final long BULK_MODE_SCAN_DELAY_MS = 1000L;
+ +  protected static final long DEFAULT_INTENT_RESULT_DURATION_MS = 1500L;
+ +  protected static final long BULK_MODE_SCAN_DELAY_MS = 1000L;
+
+ -  private static final String[] ZXING_URLS = { "http://zxing.appspot.com/scan", "zxing://scan/" };
+ +  protected static final String[] ZXING_URLS = { "http://zxing.appspot.com/scan", "zxing://scan/" };
+
+    public static final int HISTORY_REQUEST_CODE = 0x0000bacc;
+
+ -  private static final Collection<ResultMetadataType> DISPLAYABLE_METADATA_TYPES =
+ +  protected static final Collection<ResultMetadataType> DISPLAYABLE_METADATA_TYPES =
+        EnumSet.of(ResultMetadataType.ISSUE_NUMBER,
+                   ResultMetadataType.SUGGESTED_PRICE,
+                   ResultMetadataType.ERROR_CORRECTION_LEVEL,
+                   ResultMetadataType.POSSIBLE_COUNTRY);
+
+ -  private CameraManager cameraManager;
+ -  private CaptureActivityHandler handler;
+ -  private Result savedResultToShow;
+ -  private ViewfinderView viewfinderView;
+ -  private TextView statusView;
+ -  private View resultView;
+ -  private Result lastResult;
+ -  private boolean hasSurface;
+ -  private boolean copyToClipboard;
+ -  private IntentSource source;
+ -  private String sourceUrl;
+ -  private ScanFromWebPageManager scanFromWebPageManager;
+ -  private Collection<BarcodeFormat> decodeFormats;
+ -  private Map<DecodeHintType,?> decodeHints;
+ -  private String characterSet;
+ -  private HistoryManager historyManager;
+ -  private InactivityTimer inactivityTimer;
+ -  private BeepManager beepManager;
+ -  private AmbientLightManager ambientLightManager;
+ +  protected CameraManager cameraManager;
+ +  protected CaptureActivityHandler handler;
+ +  protected Result savedResultToShow;
+ +  protected ViewfinderView viewfinderView;
+ +  protected TextView statusView;
+ +  protected View resultView;
+ +  protected Result lastResult;
+ +  protected boolean hasSurface;
+ +  protected boolean copyToClipboard;
+ +  protected IntentSource source;
+ +  protected String sourceUrl;
+ +  protected ScanFromWebPageManager scanFromWebPageManager;
+ +  protected Collection<BarcodeFormat> decodeFormats;
+ +  protected Map<DecodeHintType,?> decodeHints;
+ +  protected String characterSet;
+ +  protected HistoryManager historyManager;
+ +  protected InactivityTimer inactivityTimer;
+ +  protected BeepManager beepManager;
+ +  protected AmbientLightManager ambientLightManager;
+
+    ViewfinderView getViewfinderView() {
+      return viewfinderView;
+ @@ -156,7 +158,7 @@
+      // want to open the camera driver and measure the screen size if we're going to show the help on
+      // first launch. That led to bugs where the scanning rectangle was the wrong size and partially
+      // off screen.
+ -    cameraManager = new CameraManager(getApplication());
+ +    cameraManager = getCameraManagerNewInstance();
+
+      viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
+      viewfinderView.setCameraManager(cameraManager);
+ @@ -170,6 +172,7 @@
+      SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+      if (prefs.getBoolean(PreferencesActivity.KEY_DISABLE_AUTO_ORIENTATION, true)) {
+ +      //noinspection WrongConstant
+        setRequestedOrientation(getCurrentOrientation());
+      } else {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+ @@ -265,7 +268,11 @@
+      }
+    }
+
+ -  private int getCurrentOrientation() {
+ +  protected CameraManager getCameraManagerNewInstance() {
+ +    return new CameraManager(getApplication());
+ +  }
+ +
+ +  protected int getCurrentOrientation() {
+      int rotation = getWindowManager().getDefaultDisplay().getRotation();
+      if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        switch (rotation) {
+ @@ -286,7 +293,7 @@
+      }
+    }
+
+ -  private static boolean isZXingURL(String dataString) {
+ +  protected static boolean isZXingURL(String dataString) {
+      if (dataString == null) {
+        return false;
+      }
+ @@ -362,25 +369,32 @@
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+      Intent intent = new Intent(Intent.ACTION_VIEW);
+ -    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+ -    switch (item.getItemId()) {
+ -      case R.id.menu_share:
+ +    int flag;
+ +    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+ +      flag = Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
+ +    } else {
+ +      //noinspection deprecation
+ +      flag = Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
+ +    }
+ +    intent.addFlags(flag);
+ +    int i = item.getItemId();
+ +    if (i == R.id.menu_share) {
+          intent.setClassName(this, ShareActivity.class.getName());
+          startActivity(intent);
+ -        break;
+ -      case R.id.menu_history:
+ +
+ +    } else if (i == R.id.menu_history) {
+          intent.setClassName(this, HistoryActivity.class.getName());
+          startActivityForResult(intent, HISTORY_REQUEST_CODE);
+ -        break;
+ -      case R.id.menu_settings:
+ +
+ +    } else if (i == R.id.menu_settings) {
+          intent.setClassName(this, PreferencesActivity.class.getName());
+          startActivity(intent);
+ -        break;
+ -      case R.id.menu_help:
+ +
+ +    } else if (i == R.id.menu_help) {
+          intent.setClassName(this, HelpActivity.class.getName());
+          startActivity(intent);
+ -        break;
+ -      default:
+ +
+ +    } else {
+          return super.onOptionsItemSelected(item);
+      }
+      return true;
+ @@ -397,7 +411,7 @@
+      }
+    }
+
+ -  private void decodeOrStoreSavedBitmap(Bitmap bitmap, Result result) {
+ +  protected void decodeOrStoreSavedBitmap(@SuppressWarnings("UnusedParameters") Bitmap bitmap, Result result) {
+      // Bitmap isn't used yet -- will be used soon
+      if (handler == null) {
+        savedResultToShow = result;
+ @@ -488,12 +502,17 @@
+     * @param scaleFactor amount by which thumbnail was scaled
+     * @param rawResult The decoded results which contains the points to draw.
+     */
+ -  private void drawResultPoints(Bitmap barcode, float scaleFactor, Result rawResult) {
+ +  protected void drawResultPoints(Bitmap barcode, float scaleFactor, Result rawResult) {
+      ResultPoint[] points = rawResult.getResultPoints();
+      if (points != null && points.length > 0) {
+        Canvas canvas = new Canvas(barcode);
+        Paint paint = new Paint();
+ +      if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+ +        paint.setColor(getResources().getColor(R.color.result_points, null));
+ +      } else {
+ +        //noinspection deprecation
+        paint.setColor(getResources().getColor(R.color.result_points));
+ +      }
+        if (points.length == 2) {
+          paint.setStrokeWidth(4.0f);
+          drawLine(canvas, paint, points[0], points[1], scaleFactor);
+ @@ -514,7 +533,7 @@
+      }
+    }
+
+ -  private static void drawLine(Canvas canvas, Paint paint, ResultPoint a, ResultPoint b, float scaleFactor) {
+ +  protected static void drawLine(Canvas canvas, Paint paint, ResultPoint a, ResultPoint b, float scaleFactor) {
+      if (a != null && b != null) {
+        canvas.drawLine(scaleFactor * a.getX(),
+                        scaleFactor * a.getY(),
+ @@ -525,7 +544,7 @@
+    }
+
+    // Put up our own UI for how to handle the decoded contents.
+ -  private void handleDecodeInternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
+ +  protected void handleDecodeInternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
+
+      CharSequence displayContents = resultHandler.getDisplayContents();
+
+ @@ -616,7 +635,8 @@
+    }
+
+    // Briefly show the contents of the barcode, then handle the result outside Barcode Scanner.
+ -  private void handleDecodeExternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
+ +  @SuppressLint("SetTextI18n")
+ +  protected void handleDecodeExternally(Result rawResult, ResultHandler resultHandler, Bitmap barcode) {
+
+      if (barcode != null) {
+        viewfinderView.drawResultBitmap(barcode);
+ @@ -648,7 +668,14 @@
+        // Hand back whatever action they requested - this can be changed to Intents.Scan.ACTION when
+        // the deprecated intent is retired.
+        Intent intent = new Intent(getIntent().getAction());
+ -      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+ +      int flag;
+ +      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+ +        flag = Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
+ +      } else {
+ +        //noinspection deprecation
+ +        flag = Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
+ +      }
+ +      intent.addFlags(flag);
+        intent.putExtra(Intents.Scan.RESULT, rawResult.toString());
+        intent.putExtra(Intents.Scan.RESULT_FORMAT, rawResult.getBarcodeFormat().toString());
+        byte[] rawBytes = rawResult.getRawBytes();
+ @@ -700,7 +727,7 @@
+      }
+    }
+
+ -  private void sendReplyMessage(int id, Object arg, long delayMS) {
+ +  protected void sendReplyMessage(int id, Object arg, long delayMS) {
+      if (handler != null) {
+        Message message = Message.obtain(handler, id, arg);
+        if (delayMS > 0L) {
+ @@ -711,7 +738,7 @@
+      }
+    }
+
+ -  private void initCamera(SurfaceHolder surfaceHolder) {
+ +  protected void initCamera(SurfaceHolder surfaceHolder) {
+      if (surfaceHolder == null) {
+        throw new IllegalStateException("No SurfaceHolder provided");
+      }
+ @@ -737,7 +764,7 @@
+      }
+    }
+
+ -  private void displayFrameworkBugMessageAndExit() {
+ +  protected void displayFrameworkBugMessageAndExit() {
+      AlertDialog.Builder builder = new AlertDialog.Builder(this);
+      builder.setTitle(getString(R.string.app_name));
+      builder.setMessage(getString(R.string.msg_camera_framework_bug));
+ @@ -753,7 +780,7 @@
+      resetStatusView();
+    }
+
+ -  private void resetStatusView() {
+ +  protected void resetStatusView() {
+      resultView.setVisibility(View.GONE);
+      statusView.setText(R.string.msg_default_status);
+      statusView.setVisibility(View.VISIBLE);
+ diff -rub /zxing/android/src/com/google/zxing/client/android/CaptureActivityHandler.java /scanner/src/main/java/com/google/zxing/client/android/CaptureActivityHandler.java
+ --- /zxing/android/src/com/google/zxing/client/android/CaptureActivityHandler.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/CaptureActivityHandler.java	2016-04-19 16:36:19.000000000 -0500
+ @@ -77,11 +77,10 @@
+
+    @Override
+    public void handleMessage(Message message) {
+ -    switch (message.what) {
+ -      case R.id.restart_preview:
+ +    if (message.what == R.id.restart_preview) {
+          restartPreviewAndDecode();
+ -        break;
+ -      case R.id.decode_succeeded:
+ +
+ +    } else if (message.what == R.id.decode_succeeded) {
+          state = State.SUCCESS;
+          Bundle bundle = message.getData();
+          Bitmap barcode = null;
+ @@ -96,17 +95,16 @@
+            scaleFactor = bundle.getFloat(DecodeThread.BARCODE_SCALED_FACTOR);
+          }
+          activity.handleDecode((Result) message.obj, barcode, scaleFactor);
+ -        break;
+ -      case R.id.decode_failed:
+ -        // We're decoding as fast as possible, so when one decode fails, start another.
+ +
+ +    } else if (message.what == R.id.decode_failed) {// We're decoding as fast as possible, so when one decode fails, start another.
+          state = State.PREVIEW;
+          cameraManager.requestPreviewFrame(decodeThread.getHandler(), R.id.decode);
+ -        break;
+ -      case R.id.return_scan_result:
+ +
+ +    } else if (message.what == R.id.return_scan_result) {
+          activity.setResult(Activity.RESULT_OK, (Intent) message.obj);
+          activity.finish();
+ -        break;
+ -      case R.id.launch_product_query:
+ +
+ +    } else if (message.what == R.id.launch_product_query) {
+          String url = (String) message.obj;
+
+          Intent intent = new Intent(Intent.ACTION_VIEW);
+ @@ -133,7 +131,7 @@
+          } catch (ActivityNotFoundException ignored) {
+            Log.w(TAG, "Can't find anything to handle VIEW of URI " + url);
+          }
+ -        break;
+ +
+      }
+    }
+
+ diff -rub /zxing/android/src/com/google/zxing/client/android/DecodeHandler.java /scanner/src/main/java/com/google/zxing/client/android/DecodeHandler.java
+ --- /zxing/android/src/com/google/zxing/client/android/DecodeHandler.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/DecodeHandler.java	2016-04-19 16:36:19.000000000 -0500
+ @@ -53,14 +53,13 @@
+      if (!running) {
+        return;
+      }
+ -    switch (message.what) {
+ -      case R.id.decode:
+ +    if (message.what == R.id.decode) {
+          decode((byte[]) message.obj, message.arg1, message.arg2);
+ -        break;
+ -      case R.id.quit:
+ +
+ +    } else if (message.what == R.id.quit) {
+          running = false;
+          Looper.myLooper().quit();
+ -        break;
+ +
+      }
+    }
+
+ diff -rub /zxing/android/src/com/google/zxing/client/android/ViewfinderView.java /scanner/src/main/java/com/google/zxing/client/android/ViewfinderView.java
+ --- /zxing/android/src/com/google/zxing/client/android/ViewfinderView.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/ViewfinderView.java	2016-04-20 14:10:17.000000000 -0500
+ @@ -38,24 +38,24 @@
+   *
+   * @author dswitkin@google.com (Daniel Switkin)
+   */
+ -public final class ViewfinderView extends View {
+ +public class ViewfinderView extends View {
+
+ -  private static final int[] SCANNER_ALPHA = {0, 64, 128, 192, 255, 192, 128, 64};
+ -  private static final long ANIMATION_DELAY = 80L;
+ -  private static final int CURRENT_POINT_OPACITY = 0xA0;
+ -  private static final int MAX_RESULT_POINTS = 20;
+ -  private static final int POINT_SIZE = 6;
+ -
+ -  private CameraManager cameraManager;
+ -  private final Paint paint;
+ -  private Bitmap resultBitmap;
+ -  private final int maskColor;
+ -  private final int resultColor;
+ -  private final int laserColor;
+ -  private final int resultPointColor;
+ -  private int scannerAlpha;
+ -  private List<ResultPoint> possibleResultPoints;
+ -  private List<ResultPoint> lastPossibleResultPoints;
+ +  protected static final int[] SCANNER_ALPHA = {0, 64, 128, 192, 255, 192, 128, 64};
+ +  protected static final long ANIMATION_DELAY = 80L;
+ +  protected static final int CURRENT_POINT_OPACITY = 0xA0;
+ +  protected static final int MAX_RESULT_POINTS = 20;
+ +  protected static final int POINT_SIZE = 6;
+ +
+ +  protected CameraManager cameraManager;
+ +  protected final Paint paint;
+ +  protected Bitmap resultBitmap;
+ +  protected final int maskColor;
+ +  protected final int resultColor;
+ +  protected final int laserColor;
+ +  protected final int resultPointColor;
+ +  protected int scannerAlpha;
+ +  protected List<ResultPoint> possibleResultPoints;
+ +  protected List<ResultPoint> lastPossibleResultPoints;
+
+    // This constructor is used when the class is built from an XML resource.
+    public ViewfinderView(Context context, AttributeSet attrs) {
+ diff -rub /zxing/android/src/com/google/zxing/client/android/camera/CameraManager.java /scanner/src/main/java/com/google/zxing/client/android/camera/CameraManager.java
+ --- /zxing/android/src/com/google/zxing/client/android/camera/CameraManager.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/camera/CameraManager.java	2016-04-20 14:33:16.000000000 -0500
+ @@ -36,7 +36,7 @@
+   *
+   * @author dswitkin@google.com (Daniel Switkin)
+   */
+ -public final class CameraManager {
+ +public class CameraManager {
+
+    private static final String TAG = CameraManager.class.getSimpleName();
+
+ @@ -47,9 +47,9 @@
+
+    private final Context context;
+    private final CameraConfigurationManager configManager;
+ -  private OpenCamera camera;
+ +  protected OpenCamera camera;
+    private AutoFocusManager autoFocusManager;
+ -  private Rect framingRect;
+ +  protected Rect framingRect;
+    private Rect framingRectInPreview;
+    private boolean initialized;
+    private boolean previewing;
+ diff -rub /zxing/android/src/com/google/zxing/client/android/encode/EncodeActivity.java /scanner/src/main/java/com/google/zxing/client/android/encode/EncodeActivity.java
+ --- /zxing/android/src/com/google/zxing/client/android/encode/EncodeActivity.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/encode/EncodeActivity.java	2016-04-19 16:36:19.000000000 -0500
+ @@ -95,11 +95,11 @@
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+ -    switch (item.getItemId()) {
+ -      case R.id.menu_share:
+ +    int i = item.getItemId();
+ +    if (i == R.id.menu_share) {
+          share();
+          return true;
+ -      case R.id.menu_encode:
+ +    } else if (i == R.id.menu_encode) {
+          Intent intent = getIntent();
+          if (intent == null) {
+            return false;
+ @@ -109,7 +109,7 @@
+          startActivity(intent);
+          finish();
+          return true;
+ -      default:
+ +    } else {
+          return false;
+      }
+    }
+ diff -rub /zxing/android/src/com/google/zxing/client/android/history/HistoryActivity.java /scanner/src/main/java/com/google/zxing/client/android/history/HistoryActivity.java
+ --- /zxing/android/src/com/google/zxing/client/android/history/HistoryActivity.java	2016-04-19 14:19:14.000000000 -0500
+ +++ /scanner/src/main/java/com/google/zxing/client/android/history/HistoryActivity.java	2016-04-19 16:36:19.000000000 -0500
+ @@ -114,8 +114,8 @@
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+ -    switch (item.getItemId()) {
+ -      case R.id.menu_history_send:
+ +    int i = item.getItemId();
+ +    if (i == R.id.menu_history_send) {
+          CharSequence history = historyManager.buildHistory();
+          Parcelable historyFile = HistoryManager.saveHistory(history.toString());
+          if (historyFile == null) {
+ @@ -137,8 +137,8 @@
+              Log.w(TAG, anfe.toString());
+            }
+          }
+ -        break;
+ -      case R.id.menu_history_clear_text:
+ +
+ +    } else if (i == R.id.menu_history_clear_text) {
+          AlertDialog.Builder builder = new AlertDialog.Builder(this);
+          builder.setMessage(R.string.msg_sure);
+          builder.setCancelable(true);
+ @@ -152,8 +152,8 @@
+          });
+          builder.setNegativeButton(R.string.button_cancel, null);
+          builder.show();
+ -        break;
+ -      default:
+ +
+ +    } else {
+          return super.onOptionsItemSelected(item);
+      }
+      return true;

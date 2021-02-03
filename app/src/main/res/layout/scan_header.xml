@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scan_header_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/scan_header_height"
+    android:background="@drawable/scan_header_background">
+
+    <TextView
+        android:layout_width="@dimen/scan_header_horizontal_margin_1"
+        android:layout_height="@dimen/scan_header_height"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        style="@style/Body1"
+        android:textColor="@color/grey3"
+        android:text="@string/assets"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/scan_header_horizontal_margin_1"
+        android:layout_marginEnd="@dimen/scan_header_horizontal_margin_1"
+        style="@style/Body1"
+        android:textColor="@color/grey3"
+        android:text="@string/scan_set"/>
+
+    <TextView
+        android:layout_width="@dimen/scan_header_horizontal_margin_2"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        style="@style/Body1"
+        android:textColor="@color/grey3"
+        android:text="@string/sync_date"/>
+
+</RelativeLayout>

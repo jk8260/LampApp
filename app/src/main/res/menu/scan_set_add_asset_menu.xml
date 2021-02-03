@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_add_asset_camera"
+        android:orderInCategory="0"
+        android:icon="@drawable/action_camera"
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_title_add_asset_field_via_camera" />
+
+</menu>

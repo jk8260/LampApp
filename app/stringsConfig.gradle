@@ -1,0 +1,127 @@
+import org.apache.commons.csv.*
+import org.apache.commons.io.FileUtils
+
+import static org.apache.commons.csv.CSVFormat.*
+import java.nio.file.Paths
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.apache.commons:commons-csv:1.4'
+        classpath 'org.apache.directory.studio:org.apache.commons.io:2.4'
+    }
+}
+
+runStringsConfigurationScript()
+
+@SuppressWarnings("GroovyAssignabilityCheck")
+def runStringsConfigurationScript() {
+    List<CSVRecord> configRecords = readStringsConfig()
+    List<CSVRecord> mappings = readMappingFile()
+    Node resourcesRootNode = readXmlFile()
+    if (configRecords == null || configRecords.isEmpty() ||
+            mappings == null || mappings.isEmpty() ||
+        resourcesRootNode == null) {
+        logger.warn('One or more required files is missing or could not be read... skipping strings configuration.')
+    } else {
+        println('Configuring strings...')
+        for (CSVRecord configRecord : configRecords) {
+            def unusedConfigKey = new HashSet<String>()
+            def sharedAndroidKeySet = new HashSet<String>()
+            def configKey = configRecord.get(0)
+            def configAndroidStringValue = configRecord.get(2)
+            for (CSVRecord mappingRecord : mappings) {
+                def mappingKey = mappingRecord.get(0)
+                if (mappingKey.equals(configKey)) {
+                    def androidStringKey = mappingRecord.get(1)
+                    if (androidStringKey.isEmpty()) {
+                        if (unusedConfigKey.add(configKey)) {
+                            println('String configuration key ' + configKey + ' is not used for Android.')
+                        }
+                        break
+                    } else {
+                        checkForSharedKeys(mappingRecord, sharedAndroidKeySet, androidStringKey)
+                        updateNode(resourcesRootNode, androidStringKey, configAndroidStringValue)
+                    }
+                    break
+                }
+            }
+        }
+        writeXml(resourcesRootNode)
+    }
+}
+
+def void writeXml(Node xml) {
+    def file = new File(projectDir.absolutePath + File.separator + 'src/main/res/values/strings.xml')
+    def writer = new FileWriter(file)
+    def printer = new XmlNodePrinter(new PrintWriter(writer))
+    printer.preserveWhitespace = true
+    printer.print(xml)
+    appendComment(file)
+}
+
+def void appendComment(File file) {
+    def fileString = FileUtils.readFileToString(file)
+    FileUtils.writeStringToFile(file, '<!--THIS FILE IS UPDATED DURING BUILD. -->\n' + fileString)
+}
+
+@SuppressWarnings("GroovyAssignabilityCheck")
+def void updateNode(Node resourcesRootNode, androidStringKey, configAndroidStringValue) {
+    if (configAndroidStringValue.isEmpty()) {
+        logger.warn('Skipping empty value for Android string key ' + androidStringKey + '...')
+    } else {
+        def stringNodeIndex = resourcesRootNode.children().findIndexOf { string ->
+            androidStringKey.equals(string.@name)
+        }
+        if (stringNodeIndex != -1) {
+            resourcesRootNode.children()[stringNodeIndex].replaceNode {
+                string(name: androidStringKey, configAndroidStringValue)
+            }
+        }
+    }
+}
+
+def void checkForSharedKeys(CSVRecord mappingRecord, HashSet<String> sharedAndroidKeySet, String androidStringKey) {
+    def isSharedAndroidKey = !mappingRecord.get(2).isEmpty()
+    if (isSharedAndroidKey) {
+        if (sharedAndroidKeySet.add(androidStringKey)) {
+            logger.warn('Android string key ' + androidStringKey + ' is shared by more than one configuration key. If the values differ the value for the Android string key will be overwritten with the last configuration value.')
+        }
+    }
+}
+
+@SuppressWarnings("GroovyVariableNotAssigned")
+def readStringsConfig() {
+    println('Loading strings config file...')
+    def stringsConfigFile = new File(projectDir.absolutePath + File.separator + 'LAMPStrings.csv')
+    println('config file path: ' + stringsConfigFile.absolutePath)
+    def records
+    Paths.get(stringsConfigFile.absolutePath).withReader { reader ->
+        def csv = new CSVParser(reader, DEFAULT)
+        records = csv.getRecords()
+    }
+    records
+}
+
+@SuppressWarnings("GroovyVariableNotAssigned")
+def readMappingFile() {
+    println('Loading strings mapping file...')
+    def stringsMappingFile = new File(projectDir.absolutePath + File.separator + 'stringsMapping.csv')
+    println('mapping file path: ' + stringsMappingFile.absolutePath)
+    def records
+    Paths.get(stringsMappingFile.absolutePath).withReader { reader ->
+        def csv = new CSVParser(reader, DEFAULT)
+        records = csv.getRecords()
+    }
+    records
+}
+
+def readXmlFile() {
+    println('Loading strings xml file...')
+    def stringsXmlFile = new File(projectDir.absolutePath + File.separator + 'src/main/res/values/strings.xml')
+    println('xml file path: ' + stringsXmlFile.absolutePath)
+    def xmlParser = new XmlParser()
+    xmlParser.parse(stringsXmlFile)
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:background="?attr/selectableItemBackground">
+
+    <Switch
+        android:id="@+id/field_setting_switch"
+        android:layout_width="@dimen/default_title_margin"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:tint="@color/primary"
+        android:paddingEnd="@dimen/default_ui_padding"/>
+
+    <TextView
+        android:id="@+id/field_setting_label"
+        style="@style/Subheading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/field_setting_switch"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/field_setting_description"
+        style="@style/Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/field_setting_label"
+        android:layout_alignStart="@+id/field_setting_label"
+        android:textColor="@color/grey5"/>
+
+</RelativeLayout>

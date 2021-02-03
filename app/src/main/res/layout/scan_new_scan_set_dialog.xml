@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".scan.newset.NewScanSetDialogFragment">
+
+    <TextView
+        style="@style/Title1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:text="@string/scan_new_scan_set_dialog_title"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:text="@string/scan_new_scan_set_dialog_message"
+        android:textColor="@color/grey5" />
+
+    <EditText
+        android:id="@+id/scan_new_scan_set_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/scan_new_scan_set_name_hint"
+        android:inputType="text"
+        android:textColor="@color/black">
+    <requestFocus/>
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/button_ok"
+            android:background="@color/transparent"
+            android:text="@string/alert_dialog_cancel"
+            android:textColor="@drawable/button_text_selector_red"  />
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:text="@string/alert_dialog_ok"
+            android:textColor="@drawable/button_text_selector_red" />
+    </RelativeLayout>
+
+</LinearLayout>

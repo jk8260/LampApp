@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+</head>
+    <style type="text/css">
+            ul li {
+                list-style: none;
+            }
+
+        strong {
+            font-weight: 600;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* line 119, style.scss */
+        html {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            font-smoothing: antialiased;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            font-size: 16px;
+            font-family: "San Francisco Text", "Roboto", sans-serif;
+            font-weight: 400;
+        }
+
+        /*----------LAMP Assets
+         */
+        /* line 132, style.scss */
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        /* line 136, style.scss */
+        body .container {
+            margin: 0 auto;
+            min-height: 100%;
+            background: white;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        /* line 143, style.scss */
+        body .container nav {
+            position: relative;
+            background: #f1f1f1;
+            overflow: hidden;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            height: 54px;
+            max-height: 54px;
+            text-align: center;
+            /*----------LAMP Lookup
+             */
+        }
+        /* line 154, style.scss */
+        body .container nav > span {
+            float: left;
+            position: absolute;
+            top: 1px;
+            width: 75%;
+            left: 25%;
+            color: #9fa1a4;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        /* line 169, style.scss */
+        body .container nav > ul li {
+            float: left;
+            position: relative;
+            min-height: 100%;
+            width: 25%;
+            font-family: "Baskerville-Bold", "Roboto Slab", serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+        /* line 179, style.scss */
+        body .container nav > ul li:nth-child(n+2) {
+            margin-top: 15px;
+        }
+        /* line 183, style.scss */
+
+        /* line 193, style.scss */
+        body .container nav > ul li a strong {
+            display: block;
+            height: inherit;
+            width: 100%;
+            line-height: 1.1;
+            font-family: "San Francisco Text", "Roboto", sans-serif;
+            font-weight: 500;
+            color: #dadbe5;
+        }
+        /* line 203, style.scss */
+        body .container nav > ul li a:active {
+            background: #101112;
+        }
+        /* line 209, style.scss */
+
+        /* line 219, style.scss */
+
+        /* line 237, style.scss */
+        body .container nav.lookup > ul li {
+            float: left;
+            position: relative;
+            min-height: 100%;
+            width: 25%;
+            font-family: "Baskerville-SemiBold", "Roboto Slab", serif;
+            font-size: 14px;
+            color: #33383b;
+        }
+        /* line 246, style.scss */
+        body .container nav.lookup > ul li:last-child {
+            margin-top: 4px;
+            width: 70%;
+            margin-left: 0px;
+            text-align: left;
+        }
+        /* line 253, style.scss */
+        body .container nav.lookup > ul li strong {
+            font-family: "San Francisco Text", "Roboto", sans-serif;
+            font-size: 20px;
+            color: #d0112b;
+            display: block;
+            margin-left: -29px;
+        }
+        /* line 264, style.scss */
+        body .container .column {
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            background: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /* line 272, style.scss */
+        body .container .column section {
+            float: left;
+            position: relative;
+            width: 100%;
+            margin-left: 0px;
+            margin-bottom: 16px;
+            padding-right: 0px;
+            border-top: 1px solid #dadbe5;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        /* line 282, style.scss */
+        body .container .column section h2 {
+            display: inline-block;
+            padding-top: 2px;
+            color: #33383b;
+            padding-bottom: 8px;
+            border-top: 2px solid #d0112b;
+            width: 40%;
+        }
+        /* line 289, style.scss */
+        body .container .column section h2:before {
+            content: '';
+            width: inherit;
+            height: 2px;
+            float: left;
+            position: absolute;
+            top: 0;
+        }
+        /* line 301, style.scss */
+        body .container .column section article > div,
+        body .container .column section > div {
+            float: left;
+            position: relative;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            color: #101112;
+            padding-bottom: 12px;
+        }
+        /* line 310, style.scss */
+        body .container .column section article > div label,
+        body .container .column section > div label {
+            float: left;
+            position: relative;
+            padding: 1.7px 0;
+        }
+        /* line 315, style.scss */
+        body .container .column section article > div label:first-child,
+        body .container .column section > div label:first-child {
+            font-size: 12px;
+            color: #9fa1a4;
+            text-transform: uppercase;
+        }
+
+
+        body .container .column section.col-1 > div label:first-child {
+            width: 100%;
+            box-sizing: border-box;
+            display:inline-block;
+            background-color:#F1F1F1;
+            color:black;
+            font-weight:500;
+            padding:7px 10px 7px 10px;
+            white-space:pre-wrap;
+        }
+        /* line 354, style.scss */
+        body .container .column section.col-1 > div label:last-child {
+            width: 100%;
+            box-sizing: border-box;
+            display:inline-block;
+            padding:7px 10px 7px 10px;
+        }
+        </style>
+
+<body>
+<div class="container">
+    <nav class="lookup">
+        <ul><li><strong>   Search LAMP</strong></li></ul>
+    </nav>
+    <div class="column">
+        <section class="col-1" style="min-height:165px;width:100%;">
+
+            <div >
+                <label>What can I search for?</label>
+                <label>You can use that screen to search LAMP and Cisco databases for assets, contracts or tickets.</label>
+            </div>
+            <div >
+                <label>I am sure my search is correct, why is the result I am looking for not displayed?</label>
+                <label>Only the first 20 results matching you search are returned. Refine your search if the object you are looking for is not in the list.</label>
+            </div>
+            <div >
+                <label>I am looking for a ticket but I only see assets in the results.</label>
+                <label>You can use the filter to select the kind of object your are looking for (Asset, Contract or Ticket)</label>
+            </div>
+            <div >
+                <label>Why are some fields displayed in bold in the search results?</label>
+                <label>Each result will have a field displayed in bold, it's the field matching your search.</label>
+            </div>
+            <div >
+                <label>How do I use my camera to scan a barcode?</label>
+                <label>Click on the camera icon in the upper right corner to scan a barcode with your device.</label>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>

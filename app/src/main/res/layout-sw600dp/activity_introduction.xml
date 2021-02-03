@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.menu.IntroductionActivity"
+    android:background="@color/accentDark"
+    android:paddingBottom="@dimen/default_vertical_margin">
+
+    <include
+        android:id="@+id/introductionLayout"
+        layout="@layout/introduction_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="@dimen/introduction_layout_width"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/introduction_layout_margin_top"
+        android:paddingEnd="@dimen/introduction_layout_padding_end"/>
+
+</ScrollView>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dashboard_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/accentLight"
+    android:visibility="gone">
+
+    <View
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/primary"
+        android:layout_alignParentTop="true"/>
+    <View
+        android:id="@+id/leftBar"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/primary"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/bottomBar" />
+    <View
+        android:id="@+id/rightBar"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/primary"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/bottomBar" />
+
+    <RelativeLayout
+        android:id="@+id/dashboard_message_close"
+        android:layout_width="@dimen/default_edge_margin"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/bottomBar"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/default_small_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_message_close"
+            android:layout_alignParentTop="true"
+            android:clickable="false"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dashboard_message_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        style="@style/Body1"
+        android:textAllCaps="true"
+        android:textColor="@color/grey3"
+        android:text="@string/dashboard_system_message_title"
+        android:layout_toStartOf="@+id/dashboard_message_close"
+        android:layout_marginTop="@dimen/default_small_margin"/>
+
+    <TextView
+        android:id="@+id/dashboard_message_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/dashboard_message_title"
+        style="@style/Body1"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/default_edge_margin"
+        android:layout_marginRight="@dimen/default_edge_margin"
+        android:layout_marginBottom="@dimen/default_small_margin"/>
+
+    <View
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/primary"
+        android:layout_below="@+id/dashboard_message_content"/>
+
+</RelativeLayout>

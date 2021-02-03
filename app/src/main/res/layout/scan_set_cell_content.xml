@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/scan_cell_content_height">
+
+    <TextView
+        android:id="@+id/scan_cell_assets_number"
+        android:layout_width="@dimen/scan_header_horizontal_margin_1"
+        android:layout_height="@dimen/scan_cell_content_height"
+        android:gravity="center"
+        style="@style/Subheading2"
+        android:textColor="@color/primary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/scan_header_horizontal_margin_1"
+        android:layout_marginEnd="@dimen/scan_header_horizontal_margin_1">
+
+        <TextView
+            android:id="@+id/scan_cell_set_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Subheading2"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/scan_cell_modified_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Body1"
+            android:textColor="@color/grey4"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/scan_cell_last_sync"
+        android:layout_width="@dimen/scan_header_horizontal_margin_2"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/default_small_margin"
+        android:gravity="center_vertical"
+        style="@style/Body1"
+        android:textColor="@color/grey4"/>
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_check"
+        android:layout_width="@dimen/default_fab_diameter"
+        android:layout_height="@dimen/default_fab_diameter"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/fab_margin_default"
+        android:layout_alignBottom="@+id/list"
+        android:layout_marginBottom="@dimen/fab_margin_default"
+        android:clickable="true"
+        android:scaleType="center"
+        android:src="@drawable/fab_check"
+        app:backgroundTint="@color/primary"
+        app:rippleColor="@color/accentDark"/>
+
+</merge>

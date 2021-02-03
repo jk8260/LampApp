@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".login.GuestLoginActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/guest_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/guest_margin"
+        android:layout_marginStart="@dimen/default_horizontal_margin"
+        android:layout_below="@+id/guest_login_toolbar"
+        android:textColor="@color/white"
+        style="@style/Subheading2"
+        android:text="@string/provide_email" />
+
+    <EditText
+        android:id="@+id/guest_email"
+        style="@style/LoginEditText"
+        android:layout_below="@id/guest_header"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_hint"/>
+
+    <Button
+        android:id="@+id/login_guest_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/guest_email"
+        android:layout_marginEnd="@dimen/default_horizontal_margin"
+        android:text="@string/continue_button"
+        android:textAllCaps="false"
+        android:textColor="@drawable/button_text_selector_white"
+        android:background="@color/transparent"
+        style="@style/Title2"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:onClick="guestLogin"/>
+
+    <include
+        android:id="@+id/guest_login_toolbar"
+        layout="@layout/default_toolbar"/>
+
+</RelativeLayout>

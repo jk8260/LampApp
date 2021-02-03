@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <com.elasalle.lamp.camera.CameraSourcePreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/accentDark">
+
+        <com.elasalle.lamp4.camera.GraphicOverlay
+            android:id="@+id/graphicOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.elasalle.lamp.camera.CameraSourcePreview>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/camera_display_height"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/camera_display_margin_bottom">
+
+        <TextView
+            android:id="@+id/camera_field_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/camera_field_name_margin_top"/>
+
+        <TextView
+            android:id="@+id/focused_barcode_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/camera_field_name"
+            android:layout_centerHorizontal="true"
+            android:text="@string/scanning"
+            android:layout_margin="8dp"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/camera_fab"
+        android:layout_width="@dimen/default_fab_diameter"
+        android:layout_height="@dimen/default_fab_diameter"
+        android:src="@drawable/fab_shutter"
+        android:scaleType="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/camera_fab_margin_bottom"
+        android:onClick="returnBarcode"/>
+
+</RelativeLayout>

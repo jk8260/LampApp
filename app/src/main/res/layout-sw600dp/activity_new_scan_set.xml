@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/scan_new_scan_set_margin_top"
+        android:layout_marginBottom="@dimen/scan_new_scan_set_margin_bottom"
+        android:layout_marginStart="@dimen/scan_new_scan_set_margin_start"
+        android:layout_marginEnd="@dimen/scan_new_scan_set_margin_end"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentTop="true"
+        card_view:cardElevation="@dimen/scan_new_scan_set_card_elevation"
+        card_view:cardCornerRadius="@dimen/scan_new_scan_set_card_corner_radius">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v7.widget.CardView>
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <include layout="@layout/scan_new_scan_set_fabs" />
+
+</RelativeLayout>

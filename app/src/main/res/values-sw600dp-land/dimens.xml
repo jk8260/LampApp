@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--login-->
+    <dimen name="login_margin_top">168dp</dimen>
+
+    <!--camera-->
+    <dimen name="camera_preview_margin_start">210dp</dimen>
+    <dimen name="camera_preview_margin_top">64dp</dimen>
+    <dimen name="camera_margin_end">210dp</dimen>
+    <dimen name="camera_margin_bottom">64dp</dimen>
+
+    <!--scan-->
+    <dimen name="scan_new_scan_set_margin_top">88dp</dimen>
+    <dimen name="scan_new_scan_set_margin_bottom">64dp</dimen>
+    <dimen name="scan_new_scan_set_margin_start">210dp</dimen>
+    <dimen name="scan_new_scan_set_margin_end">210dp</dimen>
+
+    <!--notifications-->
+    <integer name="grid_columns">3</integer>
+
+</resources>

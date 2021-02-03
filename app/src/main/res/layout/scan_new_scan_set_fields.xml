@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/fieldSettings"
+        android:layout_width="@dimen/default_title_margin"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/list_field_settings"
+        android:tint="@color/grey5" />
+
+    <TextView
+        android:id="@+id/fieldLabel"
+        style="@style/Subheading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toEndOf="@+id/fieldSettings"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/fieldValue"
+        style="@style/Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="right"
+        android:paddingEnd="@dimen/default_ui_padding"
+        android:textColor="@color/grey5" />
+</RelativeLayout>

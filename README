@@ -1,0 +1,38 @@
+# Build Requirements
+- Android Studio 2.1 (for building with Android Studio)
+- Gradle 2.10
+- Java SE Development Kit 7 update 80
+- Android SDK API 23 (Google API's)
+- Android SDK Build Tools 23.0.3
+
+# Building QA Release
+```
+./gradlew clean :app:assembleQaRelease
+```
+
+# Building Production Release
+```
+./gradlew clean :app:assembleProductionRelease
+```
+
+# Signing APK
+
+##QA
+Keystore provided and signing configuration included in app/build.gradle
+
+##Production
+Signing configuration included in app/build.gradle.
+The following need to be set in the build server as environment variables:
+
+- Keystore password
+- Key password
+- Key alias
+- Keystore download url
+
+The name of the environment variables must match those in the app/build.gradle signingConfigs.productionRelease,
+or they should be updated as required.
+
+When :app:assembleProductionRelease is run, the keystore will be downloaded to the build folder so that it can
+be used for signing the apk.
+
+The keystore is deleted after the build completes.

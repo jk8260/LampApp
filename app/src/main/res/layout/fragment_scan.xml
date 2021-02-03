@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.elasalle.lamp.search.SearchFragment">
+
+    <include
+        android:id="@+id/scan_toolbar"
+        layout="@layout/default_toolbar"/>
+
+    <include
+        android:id="@+id/scan_header"
+        layout="@layout/scan_header"
+        android:layout_below="@+id/scan_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/scan_sets_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/scan_header"
+        android:layout_marginStart="@dimen/search_result_margin_start"/>
+
+    <LinearLayout
+        android:id="@+id/scan_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scan_toolbar"
+        android:layout_above="@+id/footer"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/scan_background_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty_scan"
+            android:tint="@color/grey5"
+            android:layout_marginTop="@dimen/default_large_margin"/>
+
+        <TextView
+            android:id="@+id/scan_background_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey5"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/default_horizontal_margin"
+            android:layout_marginEnd="@dimen/default_horizontal_margin"
+            android:text="@string/scan_background_text"/>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/footer"
+        layout="@layout/footer_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/scan_add_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fab_add"
+        android:tint="@color/white"
+        app:backgroundTint="@color/primary"
+        app:elevation="10dp"
+        android:scaleType="center"
+        android:layout_alignBottom="@+id/footer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-15dp"/>
+
+</RelativeLayout>

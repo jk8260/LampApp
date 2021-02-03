@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:showIn="@layout/activity_new_scan_set">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/scan_set_add_fields"
+        android:layout_width="@dimen/default_fab_diameter"
+        android:layout_height="@dimen/default_fab_diameter"
+        android:src="@drawable/fab_add_field"
+        app:backgroundTint="@color/accent"
+        android:scaleType="center"
+        android:layout_marginEnd="@dimen/default_horizontal_margin"
+        android:layout_marginBottom="@dimen/default_ui_padding"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        app:rippleColor="@color/primaryDark"
+        android:layout_above="@+id/scan_set_done"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/scan_set_done"
+        android:layout_width="@dimen/default_fab_diameter"
+        android:layout_height="@dimen/default_fab_diameter"
+        android:src="@drawable/fab_check"
+        app:backgroundTint="@color/primary"
+        android:scaleType="center"
+        android:layout_marginEnd="@dimen/default_horizontal_margin"
+        android:layout_marginBottom="@dimen/fab_bottom_margin_default"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/footer"
+        android:clickable="true"
+        app:rippleColor="@color/accentDark"/>
+
+</merge>

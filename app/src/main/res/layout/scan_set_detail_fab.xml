@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_scan_set_detail">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/scan_set_detail_add_asset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/footer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/fab_bottom_margin_small"
+        android:clickable="true"
+        android:scaleType="center"
+        android:src="@drawable/fab_add"
+        app:backgroundTint="@color/primary"
+        app:elevation="10dp"
+        app:rippleColor="@color/accentDark" />
+
+</merge>

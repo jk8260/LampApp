@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/default_ui_padding_small"
+    android:paddingEnd="@dimen/default_ui_padding"
+    android:paddingStart="@dimen/default_ui_padding"
+    android:paddingBottom="@dimen/default_ui_padding_small"
+    android:background="?android:attr/selectableItemBackground">
+    <TextView
+        android:id="@+id/asset_list_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.33"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/asset_list_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.67"
+        android:paddingStart="@dimen/default_ui_padding"
+        android:textColor="@color/black"/>
+</LinearLayout>

@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.MainActivity"
+    android:background="@color/accent">
+
+    <include
+        android:id="@+id/dashboard_toolbar"
+        layout="@layout/default_toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/dashboard_message_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dashboard_toolbar"
+        tools:layout="@layout/dashboard_message"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dashboard_message_fragment"
+        android:layout_above="@+id/dashboard_footer_logo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/dashboard_search"
+                layout="@layout/dashboard_item"/>
+
+            <include
+                android:id="@+id/dashboard_lookup"
+                layout="@layout/dashboard_item"/>
+
+            <include
+                android:id="@+id/dashboard_scan"
+                layout="@layout/dashboard_item"/>
+
+            <include
+                android:id="@+id/dashboard_notifications"
+                layout="@layout/dashboard_item"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/dashboard_footer_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/home_footer_logo"
+        android:layout_margin="@dimen/dashboard_logo_vertical_margin"
+        android:layout_above="@+id/dashboard_footer_separator"/>
+    
+    <View
+        android:id="@+id/dashboard_footer_separator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dashboard_footer_separator_height"
+        android:background="@color/primary"
+        android:layout_above="@+id/dashboard_footer_fragment"/>
+
+    <FrameLayout
+        android:id="@+id/dashboard_footer_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/dashboard_footer"/>
+
+</RelativeLayout>

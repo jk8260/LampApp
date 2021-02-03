@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/default_toolbar"/>
+
+    <include
+        android:id="@+id/list_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/footer_separator"
+        layout="@layout/notifications_list"/>
+
+    <LinearLayout
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/footer_separator"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty_notification"
+            android:tint="@color/grey5"
+            android:layout_marginTop="@dimen/default_large_margin"/>
+
+        <TextView
+            android:id="@+id/background_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey5"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/default_horizontal_margin"
+            android:layout_marginEnd="@dimen/default_horizontal_margin"
+            android:text="@string/notifications_background_text"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/footer_separator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_separator_height"
+        android:background="@color/primary"
+        android:layout_above="@+id/footer"/>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_height"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/notifications_status"
+            android:layout_width="@dimen/default_title_margin"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/Body1"
+            android:paddingStart="@dimen/default_horizontal_margin"
+            android:text="@string/notifications_status_off"
+            android:textColor="@color/grey5"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            style="@style/Subheading2"
+            android:textColor="@color/black"
+            android:text="@string/notifications_footer_title"/>
+        <Switch
+            android:id="@+id/notifications_alert_switch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tint="@color/primary"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

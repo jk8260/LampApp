@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/intro_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/intro_title_margin_top"
+        android:text="@string/intro_title"
+        style="@style/Headline"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/intro_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_title"
+        android:layout_centerHorizontal="true"
+        style="@style/Subheading1"
+        android:textColor="@color/grey3"
+        android:layout_marginStart="@dimen/intro_text_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        android:layout_marginBottom="@dimen/intro_description_margin_bottom"
+        android:text="@string/intro_description"
+        android:gravity="center"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/intro_search_fab"
+        style="@style/IntroFab"
+        android:layout_below="@+id/intro_description"
+        android:src="@drawable/intro_search"
+        android:scaleType="center"
+        android:layout_marginTop="-8dp"/>
+
+    <TextView
+        android:id="@+id/intro_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_description"
+        android:layout_marginStart="@dimen/default_title_margin"
+        style="@style/IntroductionTitles"
+        android:text="@string/intro_search_title"/>
+
+    <TextView
+        android:id="@+id/intro_search_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_search_title"
+        android:layout_alignStart="@+id/intro_search_title"
+        style="@style/IntroductionDescription"
+        android:text="@string/intro_search_description"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/intro_lookup_fab"
+        style="@style/IntroFab"
+        android:layout_below="@+id/intro_search_detail"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:src="@drawable/intro_lookup"
+        android:scaleType="center"/>
+
+    <TextView
+        android:id="@+id/intro_lookup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_search_detail"
+        android:layout_marginStart="@dimen/default_title_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        style="@style/IntroductionTitles"
+        android:text="@string/intro_lookup_title"/>
+
+    <TextView
+        android:id="@+id/intro_lookup_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_lookup_title"
+        android:layout_alignStart="@+id/intro_lookup_title"
+        style="@style/IntroductionDescription"
+        android:text="@string/intro_lookup_description"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/intro_scan_fab"
+        style="@style/IntroFab"
+        android:layout_below="@+id/intro_lookup_detail"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:src="@drawable/intro_scan"
+        android:scaleType="center"/>
+
+    <TextView
+        android:id="@+id/intro_scan_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_lookup_detail"
+        android:layout_marginStart="@dimen/default_title_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        style="@style/IntroductionTitles"
+        android:text="@string/intro_scan_title"/>
+
+    <TextView
+        android:id="@+id/intro_scan_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_scan_title"
+        android:layout_alignStart="@+id/intro_scan_title"
+        style="@style/IntroductionDescription"
+        android:text="@string/intro_scan_description"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/intro_notifications_fab"
+        style="@style/IntroFab"
+        android:layout_below="@+id/intro_scan_detail"
+        android:layout_marginTop="@dimen/default_small_margin"
+        android:src="@drawable/intro_notification"
+        android:scaleType="center"/>
+
+    <TextView
+        android:id="@+id/intro_notifications_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_scan_detail"
+        android:layout_marginStart="@dimen/default_title_margin"
+        android:layout_marginTop="@dimen/default_vertical_margin"
+        style="@style/IntroductionTitles"
+        android:text="@string/intro_notifications_title"/>
+
+    <TextView
+        android:id="@+id/intro_notifications_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro_notifications_title"
+        android:layout_alignStart="@+id/intro_notifications_title"
+        style="@style/IntroductionDescription"
+        android:text="@string/intro_notifications_description"/>
+
+    <Button
+        android:id="@+id/intro_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/intro_notifications_detail"
+        android:layout_marginTop="@dimen/intro_title_margin_top"
+        android:background="@color/transparent"
+        android:text="@string/got_it"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        style="@style/Title2"
+        android:onClick="dismissIntro"/>
+
+</RelativeLayout>

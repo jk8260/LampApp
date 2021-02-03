@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_result_item"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/default_ui_padding"
+    android:paddingStart="@dimen/default_ui_padding"
+    android:paddingEnd="@dimen/default_ui_padding"
+    android:background="@color/white"/>

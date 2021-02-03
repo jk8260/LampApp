@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_result_header_text"
+    style="@style/Body1"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/search_header_height"
+    android:layout_centerVertical="true"
+    android:background="@color/grey1"
+    android:gravity="center"
+    android:textAllCaps="true"
+    android:textColor="@color/primary"
+    android:textStyle="bold" />

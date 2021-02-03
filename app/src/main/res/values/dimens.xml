@@ -1,0 +1,127 @@
+<resources>
+    <bool name="large_layout">false</bool>
+
+    <!--font size-->
+    <dimen name="display1">34sp</dimen>
+    <dimen name="headline">24sp</dimen>
+    <dimen name="title1">20sp</dimen>
+    <dimen name="title2">18sp</dimen>
+    <dimen name="subheading">16sp</dimen>
+    <dimen name="body">14sp</dimen>
+    <dimen name="caption">12sp</dimen>
+    <dimen name="notification_badge_number">10sp</dimen>
+
+    <!--default values-->
+    <dimen name="default_ui_padding">8dp</dimen>
+    <dimen name="default_ui_padding_small">4dp</dimen>
+    <dimen name="default_horizontal_margin">16dp</dimen>
+    <dimen name="default_vertical_margin">16dp</dimen>
+    <dimen name="default_small_margin">8dp</dimen>
+    <dimen name="default_large_margin">56dp</dimen>
+    <dimen name="default_title_margin">72dp</dimen>
+    <dimen name="default_edge_margin">20dp</dimen>
+    <dimen name="default_zero">0dp</dimen>
+    <dimen name="default_divider_height">1dp</dimen>
+    <dimen name="default_divider_width">1dp</dimen>
+
+    <!--login-->
+    <dimen name="login_edittext_padding">8dp</dimen>
+    <dimen name="login_lasalle_margin">32dp</dimen>
+    <dimen name="login_lamp_margin">8dp</dimen>
+    <dimen name="login_edittext_corner_radius">2dp</dimen>
+    <dimen name="login_checkbox_margin">9dp</dimen>
+    <dimen name="login_guest_button_height">64dp</dimen>
+    <dimen name="login_forgot_height">32dp</dimen>
+    <dimen name="login_separator_height">1dp</dimen>
+    <dimen name="login_text_field_height">48dp</dimen>
+
+    <!--guest login-->
+    <dimen name="guest_margin">24dp</dimen>
+
+    <!--reset password-->
+    <dimen name="reset_password_margin">24dp</dimen>
+
+    <!--intro-->
+    <dimen name="intro_fab_size">36dp</dimen>
+    <dimen name="intro_title_margin_top">36dp</dimen>
+    <dimen name="intro_text_margin">20dp</dimen>
+    <dimen name="intro_margin_bottom">48dp</dimen>
+    <dimen name="intro_description_margin_bottom">24dp</dimen>
+
+    <!--search-->
+    <dimen name="search_field_offset">8dp</dimen>
+    <dimen name="search_bar_start_inset">72dp</dimen>
+    <dimen name="search_result_margin_start">0dp</dimen>
+    <dimen name="search_result_margin_end">0dp</dimen>
+    <dimen name="search_filter_bar_height">48dp</dimen>
+    <dimen name="search_result_header_height">32dp</dimen>
+    <dimen name="search_field_name_margin_left">8dp</dimen>
+    <dimen name="search_field_name_margin_right">4dp</dimen>
+    <dimen name="search_field_name_width">96dp</dimen>
+    <dimen name="search_header_height">32dp</dimen>
+    <dimen name="search_results_top_margin">0dp</dimen>
+
+    <!--footer-->
+    <dimen name="footer_separator_height">2dp</dimen>
+    <dimen name="footer_height">32dp</dimen>
+
+    <!--default fab button-->
+    <dimen name="default_fab_diameter">50dp</dimen>
+
+    <!--camera-->
+    <dimen name="camera_display_height">96dp</dimen>
+    <dimen name="camera_display_margin_bottom">40dp</dimen>
+    <dimen name="camera_fab_margin_bottom">16dp</dimen>
+    <dimen name="camera_field_name_margin_top">16dp</dimen>
+
+    <!--dashboard-->
+    <dimen name="dashboard_item_height">72dp</dimen>
+    <dimen name="dashboard_item_margin_start">44dp</dimen>
+    <dimen name="dashboard_text_margin_start">40dp</dimen>
+    <dimen name="dashboard_text_padding">4dp</dimen>
+    <dimen name="dashboard_message_horizontal_padding">10dp</dimen>
+    <dimen name="dashboard_footer_separator_height">2dp</dimen>
+    <dimen name="dashboard_footer_height">46dp</dimen>
+    <dimen name="dashboard_logo_vertical_margin">24dp</dimen>
+    <dimen name="dashboard_fab_diameter">56dp</dimen>
+    <dimen name="dashboard_footer_company_logo_height">24dp</dimen>
+    <dimen name="dashboard_footer_company_logo_width">80dp</dimen>
+    <dimen name="dashboard_footer_company_logo_margin_Top_Bottom">11dp</dimen>
+
+    <!--scan-->
+    <dimen name="scan_header_horizontal_margin_1">72dp</dimen>
+    <dimen name="scan_header_horizontal_margin_2">72dp</dimen>
+    <dimen name="scan_header_height">32dp</dimen>
+    <dimen name="scan_cell_content_height">48dp</dimen>
+    <dimen name="scan_new_scan_set_card_elevation">4dp</dimen>
+    <dimen name="scan_new_scan_set_card_corner_radius">0dp</dimen>
+
+    <!--my account-->
+    <dimen name="my_account_content_inset">72dp</dimen>
+    <dimen name="my_account_margin_end">20dp</dimen>
+    <dimen name="my_account_row_height_title">32dp</dimen>
+    <dimen name="my_account_row_height_content">48dp</dimen>
+    <dimen name="my_account_row_height_footer">64dp</dimen>
+    <dimen name="my_account_margin_top">12dp</dimen>
+
+    <!--change customer-->
+    <dimen name="change_customer_label_height">32dp</dimen>
+    <dimen name="change_customer_margin_left">64dp</dimen>
+
+    <!--dropdown-->
+    <dimen name="dropdown_text_padding_vertical">4dp</dimen>
+    <dimen name="dropdown_text_padding_horizontal">8dp</dimen>
+
+    <!--fabs-->
+    <dimen name="fab_bottom_margin_small">-15dp</dimen>
+    <dimen name="fab_bottom_margin_default">-25dp</dimen>
+    <dimen name="default_tiny_padding">2dp</dimen>
+    <dimen name="fab_margin_default">25dp</dimen>
+    <dimen name="notification_unread_size">10dp</dimen>
+
+    <!--notifications-->
+    <dimen name="notification_badge_stroke_width">1dp</dimen>
+    <dimen name="notification_badge_width">25dp</dimen>
+    <dimen name="notification_badge_height">25dp</dimen>
+
+</resources>

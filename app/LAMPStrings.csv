@@ -1,0 +1,139 @@
+IntroductionTitle,Welcome to LAMP!,Welcome to LAMP!
+IntroductionDescription,Check out our new and improved features.,Check out our new and improved features.
+IntroSearchTitle,Search LAMP,Search LAMP
+IntroSearchDescription,"Assets, contracts, tickets and more.","Assets, contracts, tickets and more."
+IntroLookupTitle,LAMP Lookup,LAMP Lookup
+IntroLookupDescription,Information on your Cisco serial numbers.,Information on your Cisco serial numbers.
+IntroScanTitle,LAMP Scan,LAMP Scan
+IntroScanDescription,On and offline barcode scanning.,On and offline barcode scanning.
+IntroNotificationsTitle,Notifications,Notifications
+IntroNotificationsDescription,Order status updates and more.,Order status updates and more.
+IntroAccountTitle,,
+IntroAccountDescription,,
+IntroButtonLabel,Continue,Continue
+LoginUsernameHint,Username,Username
+LoginPasswordHint,Password,Password
+LoginRememberMeLabel,Remember Me,Remember Me
+LoginButtonLabel,Continue,Login
+ForgotPasswordLabel,Forgot Password,Forgot Password
+UseGuestLabel,Use as Guest,Use as Guest
+ForgotPasswordTitle,Reset Password,Forgot Password
+ForgotPasswordDescription,Please provide your username. Your password will be reset,Please provide the account information.
+ForgotUsernameHint,Username,Username
+ForgotSubmitLabel,Submit,Submit
+GuestTitle,Use as Guest,Use as Guest
+GuestDescription,Please provide your email address to use the app.,Please provide your email address to use the app.
+GuestEmailHint,Email,Email
+GuestSumbitLabel,Continue,Continue
+DashboardTitle,LAMP Home,LAMP Home
+SystemMessageTitle,SYSTEM MESSAGE:,SYSTEM MESSAGE:
+DashboardSearchTitle,Search LAMP,Search LAMP
+DashboardSearchDescription,"Detailed information on your assets, contracts and tickets.","Detailed information on your assets, contracts and tickets."
+DashboardLookupTitle,LAMP Lookup,LAMP Lookup
+DashboardLookupDescription,Information on your Cisco serial numbers.,Information on your Cisco serial numbers.
+DashboardScanTitle,LAMP Scan,LAMP Scan
+DashboardScanDescription,Online and offline asset barcode scanning.,Online and offline asset barcode scanning.
+DashboardNotificationsTitle,Notifications,Notifications
+DashboardNotificationsDescription,Order status updates and more.,Order status updates and more.
+SearchTitle,Search LAMP,Search LAMP
+SearchAllFilter,All,All
+SearchDescription,"Search LAMP using text, voice, scanner, or built in camera.","Search LAMP using text, voice, scanner, or built in camera."
+SearchEmptyResult,No records found for your search criteria,No records found for your search criteria
+LookupTitle,LAMP Lookup,LAMP Lookup
+LookupDescription,Enter or scan a Cisco serial number to lookup detailed product information.,Enter or scan a Cisco serial number to lookup detailed product information.
+LookupNoResult,The serial number entered was not found.,The serial number entered was not found.
+ScanTitle,LAMP Scan,LAMP Scan
+ScanEmptyDescription,Create scan sets to easily group and manage your asset inventory.,Create scan sets to easily group and manage your asset inventory.
+ScanNewSetButtonLabel,New Scan Set,N/A Android button is just an icon without label
+NewSetNameTitle,Scan Set Name,Scan Set Name
+NewSetNameDescription,Use a unique name to easily identify it later.,Use a unique name to easily identify it later.
+NewSetNameHint,Scan set name,Scan set name
+NewSetNamePositiveButton,Continue,OK
+NewSetNameNegativeButton,Cancel,Cancel
+NewSetErrorNoNameText,Cannot create a Scan Set with an empty name.,Cannot create a Scan Set with an empty name.
+NewSetErrorNoNameButtonLabel,OK,Dismiss
+NewSetConfigFieldHeader,Scan Field,Scan Field
+NewSetConfigValueHeader,Field Value,Field Value
+NewSetConfigFieldShowPositive,"Show, ",Show
+NewSetConfigFieldShowNegative,"Hide, ",Hide
+NewSetConfigFieldCarryValueNegative,Always Ask,Always Ask
+NewSetConfigFieldCarryValuePositive,Carry Forward,Carry Forward
+NewSetConfigDescription,Scan fields are input fields you'll be asked to fill in for each asset. You can update the values to carry forward from the first entry. You must use at least one field to create a scan set.,Scan fields are input fields you\'ll be asked to fill in for each asset. You can update the values to carry forward from the first entry. You must use at least one field to create a scan set.
+NewSetConfigSelectFieldsButtonLabel,Select Fields,Select Fields
+NewSetConfigGoToScanSetButtonLabel,Go To Scan Set,N/A - Not applicable for Android (icon only without label)
+NewSetConfigRenameScanSetOption,Rename Scan Set,Rename Scan Set
+NewSetConfigReorderFieldsOption,Reorder Fields,Reorder Fields
+ConfigFieldCarryForwardTitle,Carry Forward Values,Carry Forward Values
+ConfigFieldCarryForwardDescription,"If enabled, the value entered on the first asset will carry forward for all assets in the scan set.","If enabled, the value entered on the first asset will carry forward for all assets in the scan set."
+ConfigFieldShowFieldTitle,Show Field in List View,Show Field in List View
+ConfigFieldShowFieldDescription,"If disabled, the label will be removed from the list of assets in your scan set. The field will still appear when entering assets.","If disabled, the label will be removed from the list of assets in your scan set. The field will still appear when entering assets."
+SelectFieldsHeaderTitle,Scan Field,Scan Field (*required field)
+ReorderFieldsHeader,Set the input order for your scan fields,Set the input order for your scan fields
+ScanSetSyncStatusTitle,Not Synced,Not Synced
+ScanSetEmptyDescription,"Tap the button below to add assets to your scan set. Tap the actions icon to see all of your scan set options. Create scan sets to easily group, manage, and inventory your office, building, and organization.","Tap the button below to add assets to your scan set. Tap the actions icon to see all of your scan set options. Create scan sets to easily group, manage, and inventory your office, building, and organization."
+ScanSetAddAssetButtonLabel,Add Asset,N/A
+ScanSetEditSetOption,Edit Scan Set,Edit Scan Set
+ScanSetDuplicateSetOption,Duplicate Scan Set,Duplicate Scan Set
+ScanSetShareCSVOption,Share as CSV,Share as CSV
+ScanSetConfirmDeleteAsset,Are you sure you want to delete this Asset?,Are you sure you want to delete this asset?
+ScanSetConfirmDeleteAssetPositive,Yes,OK
+ScanSetConfirmDeleteAssetNegative,Cancel,Cancel
+NewAssetFieldHint,Enter...,Enter…
+NewAssetAddedConfirmationMessage,Asset Added!,Asset Added!
+NewAssetUpdatedConfirmationMessage,Updated Asset!,Updated Asset!
+NewAssetAddButtonLabel,Save & next,N/A
+NewAssetUpdateButtonLabel,Update asset and continue,N/A
+NewAssetMissingValue,Field Missing,Field Missing
+UpdateScanSetButtonLabel,Validate,N/A
+NotificationsTitle,Notifications,Notifications
+NotificationsNotActivatedText,Turn on notifications below to enable this feature.,Turn on notifications below to enable this feature.
+NotificationsEmptyText,No Notifications,No Notifications
+NotificationsSettingBarTitle,Notification Alerts,Notification Alerts
+LoginGenericError,"An error occured, please try again later",There was an error. Please try again later.
+MissingUsernameError,Missing credentials,Please enter a username
+MissingPasswordError,Missing credentials,Please enter a password
+GuestLoginInvalidEmailError,The email address you entered is invalid.,Please enter a valid email address
+ApplicationVersionMismatch,Your application is not up to date. Please download the latest version.,Your application is not up to date. Please download the latest version.
+DeviceOutOfSync,Your device date is not in sync with the server. \nServer time:,Your device date is not in sync with the server. \nServer time:
+NoCameraError,Feature requires a camera,Feature requires a camera
+CameraNotAvailableError,The camera is not available,The camera is not available
+CustomerDetailsGenericError,Unable to get customer details.,Unable to get customer details.
+SearchDetailsError,Unable to get details.,Unable to get details.
+BlockingScreenTitle,LOCKED:,BLOCKING MESSAGE
+DashboardNoNetworkMessage,We are unable to connect to the LAMP servers. Some of the features of the app require a network connection. These will be restored with a connection.,We are unable to connect to the LAMP servers. Some of the features of the app require a network connection. These will be restored with a connection.
+DashboardNoNetworkTitle,NO NETWORK CONNECTION:,NO NETWORK CONNECTION:
+SettingsMenuMyAccount,My Account,My Account
+SettingsMenuChangeCustomer,Change Customer,Change Customer
+SettingsMenuAbout,About LAMP,About LAMP
+SettingsMenuIntroduction,Introduction,Introduction
+SettingsMenuThirdParty,Third Party Libraries,3rd Party Libraries
+SettingsMenuHelp,LAMP Help,LAMP Help
+SettingsMenuLogout,Logout,Logout
+SettingMenuVersionPrefix,LAMP version,Version
+CopyrightText,Copyright \u{00A9} 2016 LaSalle Solutions. All rights reserved.,Copyright \u{00A9} 2016 LaSalle Solutions. All rights reserved.
+MyAccountScreenTitle,My Account,My Account
+MyAccountInfoHeader,Account Info,Account Info
+MyAccountNameTitle,Name,Name
+MyAccountUsernameTitle,Username,Username
+MyAccountEmailTitle,Email,Email
+ChangeCustomerScreenTitle,Change Customer,Change Customer
+ChangeCustomerHeader,Select a customer to represent,Select a customer to represent.
+AboutScreenTitle,About LAMP,About LAMP
+ThirdPartyScreenTitle,Third Party Libraries,Third Party Libraries
+FooterGuestUserText,LaSalle Solutions,LaSalle Solutions
+NoBarcodeFoundMessage,No barcode found,N/A
+TouchIDErrorDefault,There was an error verifying your identity,N/A
+TouchIDErrorBreak,Your fingerprint was not recognized. Please use your password to login,N/A
+TouchIDNotSupported,Could not launch TouchID. Device does not support that functionality.,N/A
+TouchIDFirstPrompt,Do you want to enable Touch ID?,N/A
+NotificationAlertSettingText,The notifications are disabled in the application settings. To receive notification alerts please turn on notifications for this application in the Settings app.,N/A
+NotificationAlertGoToSettings,Open Settings,N/A
+NotificationAlertSettingDismiss,Dismiss,N/A
+NoNetworkConnectivity,No network connectivity,Please connect to the Internet to proceed.
+ForgotPasswordSuccess,The username was successfully submitted for password reset. Please check your email.,The username was successfully submitted for password reset. Please check your email.
+ForgotPasswordUsernameNotFound,Username not found,Username not found
+NotificationNoDetail,Could not find this document,Could not find this document
+ScanSetConfirmDelete,Are you sure you want to delete this set?,Are you sure you want to delete this set?
+ScanSetSyncing,Syncing...,Syncing…
+ScanSyncError,Could not sync that Scan Set. Please try again later.,Could not sync that Scan Set. Please try again later.
+TouchIDSettingDescription,Any necessary warning/explanation,N/A

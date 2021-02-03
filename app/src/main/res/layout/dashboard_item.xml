@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dashboard_item_height"
+    android:layout_marginTop="@dimen/default_small_margin">
+
+    <LinearLayout
+        android:id="@+id/dashboard_item_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/dashboard_item_background"
+        android:layout_marginStart="@dimen/dashboard_item_margin_start">
+
+        <TextView
+            android:id="@+id/dashboard_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dashboard_text_margin_start"
+            android:paddingTop="@dimen/dashboard_text_padding"
+            android:paddingEnd="@dimen/dashboard_text_padding"
+            style="@style/Title3"
+            android:textColor="@color/white"
+            android:text="@string/dashboard_search_title"/>
+
+        <TextView
+            android:id="@+id/dashboard_item_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dashboard_text_margin_start"
+            android:paddingEnd="@dimen/dashboard_text_padding"
+            android:paddingBottom="@dimen/dashboard_text_padding"
+            style="@style/Subheading1"
+            android:textColor="@color/grey3"
+            android:text="@string/dashboard_search_description"/>
+
+    </LinearLayout>
+    <include
+        layout="@layout/dashboard_item_fab" />
+
+</RelativeLayout>

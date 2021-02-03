@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/fieldSelection"
+        android:layout_width="@dimen/default_title_margin"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/list_check_empty"
+        android:tint="@color/grey5" />
+
+    <TextView
+        android:id="@+id/fieldLabel"
+        style="@style/Subheading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/fieldSelection"
+        android:textColor="@color/black" />
+
+</RelativeLayout>
